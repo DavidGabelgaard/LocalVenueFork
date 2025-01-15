@@ -55,7 +55,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Database context setup starts
-var connectionString =
+string connectionString =
     builder.Configuration.GetConnectionString("VenueContext")
     ?? throw new ArgumentNullException("VenueContext");
 

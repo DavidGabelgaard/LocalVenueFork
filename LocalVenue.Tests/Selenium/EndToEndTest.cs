@@ -50,8 +50,10 @@ public class EndToEndTest : IDisposable
 
         wait.Until(d => d.Url.Contains(baseUrl));
 
-        var showLinkButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Shows")));
-        
+        var showLinkButton = wait.Until(
+            ExpectedConditions.ElementToBeClickable(By.LinkText("Shows"))
+        );
+
         showLinkButton.Click();
 
         var createShowButton = wait.Until(
