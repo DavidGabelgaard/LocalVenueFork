@@ -50,7 +50,9 @@ public class EndToEndTest : IDisposable
 
         wait.Until(d => d.Url.Contains(baseUrl));
 
-        var showLinkButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("Shows")));
+        var showLinkButton = wait.Until(
+            ExpectedConditions.ElementToBeClickable(By.LinkText("Shows"))
+        );
 
         showLinkButton.Click();
 
@@ -100,10 +102,10 @@ public class EndToEndTest : IDisposable
 
         wait.Until(webDriver =>
             (bool)
-            ((IJavaScriptExecutor)webDriver).ExecuteScript(
-                "return arguments[0].getBoundingClientRect().top >= 0 && arguments[0].getBoundingClientRect().bottom <= window.innerHeight;",
-                show
-            )
+                ((IJavaScriptExecutor)webDriver).ExecuteScript(
+                    "return arguments[0].getBoundingClientRect().top >= 0 && arguments[0].getBoundingClientRect().bottom <= window.innerHeight;",
+                    show
+                )
         );
 
         show.Click();
@@ -159,10 +161,10 @@ public class EndToEndTest : IDisposable
 
         wait.Until(webDriver =>
             (bool)
-            ((IJavaScriptExecutor)webDriver).ExecuteScript(
-                "return arguments[0].getBoundingClientRect().top >= 0 && arguments[0].getBoundingClientRect().bottom <= window.innerHeight;",
-                deleteButton
-            )
+                ((IJavaScriptExecutor)webDriver).ExecuteScript(
+                    "return arguments[0].getBoundingClientRect().top >= 0 && arguments[0].getBoundingClientRect().bottom <= window.innerHeight;",
+                    deleteButton
+                )
         );
 
         deleteButton.Click();
