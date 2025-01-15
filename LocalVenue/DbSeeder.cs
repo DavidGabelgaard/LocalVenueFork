@@ -16,7 +16,7 @@ public static class DbSeeder
         if (context.Shows.Any(show => show.EndTime < DateTime.Now))
         {
             int timeOffsetHours = 1;
-            var showsToUpdate = new List<Show>(); 
+            var showsToUpdate = new List<Show>();
             var showsList = context.Shows.AsNoTracking().ToList();
 
             for (int i = 0; i < showsList.Count() - 1; i++)
